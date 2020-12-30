@@ -56,3 +56,42 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
 }
+.header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 0 1.5rem;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+    padding-bottom: 10px;
+}
+
+.form-group{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.form-group > label{
+    color: black;
+    font-weight: 530;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.button{
+    background-color: hsl(200,100%,50%);
+    color: white;
+    padding: .5em 1em;
+    border-radius: .3em;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button:hover{
+    background-color: hsl(200,100%,40%)
+}
+
+#category, #amount{
+    padding: 5px
+}

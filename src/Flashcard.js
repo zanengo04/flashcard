@@ -1,6 +1,6 @@
 import React ,{useState, useEffect, useRef} from 'react'
 
-export default function Flashcard({flashcard}) {
+export default function Flashcard({flashcard, index}) {
     const [flip, setFlip] = useState(false)
     const [height, setHeight] = useState('initial')
     
@@ -20,15 +20,16 @@ export default function Flashcard({flashcard}) {
     },[])
     return (
         <div 
-        style={{height:height}}
+        index={index}
+        style={{height:height, display:"show"}}
         className = {`card ${flip ? 'flip' : ''}`}
         onClick={() => setFlip(!flip)}>
 
             <div className = 'front' ref={frontElement}>
                 {flashcard.question}
                 <div className = "flasscard-options">
-                    {flashcard.options.map(option => {
-                        return <div className = "flashcard-option">{option}</div>
+                    {flashcard.options.map((option,index) => {
+                        return <div className = "flashcard-option" key={option}>{option}</div>
                     })}
                 </div>
             </div>
